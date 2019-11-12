@@ -51,31 +51,13 @@
 		<div class="table">
 			<div class="thead"><div class="td">Code</div><div class="td">Taux</div><div class="td">Action</div></div>
 			<div class="tbody">
-			
-				<form class="tr" method="get">
-					<div class="td"><input type="text" name="code" value="H" readonly/></div>
-					<div class="td"><input name="taux" type="number" step="0.01" min="0.0" max="99.99" size="5" value="16.0"/></div>
+                                <c:forEach items="${listeCodes}" var="code">
+                                <form class="tr" method="get">
+					<div class="td"><input type="text" name="code" value=${code.key} readonly/></div>
+					<div class="td"><input name="taux" type="number" step="0.01" min="0.0" max="99.99" size="5" value=${code.value}/></div>
 					<div class="td"><input type="submit" name="action" value="DELETE"/></div>
-				</form>	  		    
-			
-				<form class="tr" method="get">
-					<div class="td"><input type="text" name="code" value="L" readonly/></div>
-					<div class="td"><input name="taux" type="number" step="0.01" min="0.0" max="99.99" size="5" value="7.0"/></div>
-					<div class="td"><input type="submit" name="action" value="DELETE"/></div>
-				</form>	  		    
-			
-				<form class="tr" method="get">
-					<div class="td"><input type="text" name="code" value="M" readonly/></div>
-					<div class="td"><input name="taux" type="number" step="0.01" min="0.0" max="99.99" size="5" value="11.0"/></div>
-					<div class="td"><input type="submit" name="action" value="DELETE"/></div>
-				</form>	  		    
-			
-				<form class="tr" method="get">
-					<div class="td"><input type="text" name="code" value="N" readonly/></div>
-					<div class="td"><input name="taux" type="number" step="0.01" min="0.0" max="99.99" size="5" value="0.0"/></div>
-					<div class="td"><input type="submit" name="action" value="DELETE"/></div>
-				</form>	  		    
-			  
+				</form>	  
+                                </c:forEach>		    	  
 			</div>
 		</div>
 	</body>        
